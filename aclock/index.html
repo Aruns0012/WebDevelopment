@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>analagclock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #262242;
+        }
+        #clock {
+            height: 230px;
+            width: 230px;
+            /* border: 1px solid black; */
+            position: relative;
+            border-radius: 30%;
+            box-shadow: 0 -15px 15px rgba(255, 255, 255, .05),
+                        inset 0 -15px 15px rgba(255, 255, 255, .05),
+                        0 15px 15px rgba(0,0,0,.3),
+                        inset 0 15px 15px rgba(0, 0, 0, .3);
+
+        }
+        /* #center {
+            height: 10px;
+            width: 10px;
+            background-color: black;
+            top: 48%;
+            border-radius: 50%;
+        } */
+
+        #Hour, #Minutes, #Seconds, #center {
+            background-color: #ffffff;
+            position: absolute;
+            left: 50%;
+            transform-origin:bottom ;
+        }
+        #Hour {
+            width: 8px;
+            height: 35%;
+            top: 15%;
+            border-radius: 4px;
+
+        }
+
+        #Minutes {
+            width: 5px;
+            height: 40%;
+            top: 10%;
+            border-radius: 5px;
+        }
+        
+        #Seconds {
+            width: 1px;
+            height: 42%;
+            top: 8%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="center"></div>
+        <div id="Hour"></div>
+        <div id="Minutes"></div>
+        <div id="Seconds"></div>
+
+    </div>
+</body>
+<script>
+  setInterval(()=> {
+    let da = new Date();
+    let htime = da.getHours();
+    let mtime = da.getMinutes();
+    let stime = da.getSeconds();
+    let hrot = 30*htime + mtime/2;
+    let mrot = mtime*6;
+    let srot = 6*stime;
+
+    let Hour = document.getElementById('Hour'); 
+    let Minutes = document.getElementById('Minutes'); 
+    let Seconds = document.getElementById('Seconds'); 
+
+    Hour.style.transform = `rotate(${hrot}deg)`;
+    Minutes.style.transform = `rotate(${mrot}deg)`;
+    Seconds.style.transform = `rotate(${srot}deg)`;
+  }, 1000);
+</script>
+</html>
