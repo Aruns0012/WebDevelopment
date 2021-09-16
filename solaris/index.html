@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solaris</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            transition: all .2s;
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        body {
+            background-color: #242424;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            background-color: #161616;
+            text-transform: capitalize;
+        }
+
+        .logo {
+            font-size: 38px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            font-family: 'Cabin Sketch', cursive;
+        }
+
+        .navbar li {
+            display: inline-block;
+            list-style: none;
+            margin: 5px 23px;
+            font-size: 22px;
+        }
+
+        .navbar li:hover {
+            transform: scale(1.1);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #8a88ff;
+            opacity: .8;
+            letter-spacing: 2px;
+        }
+
+        .contact_b {
+            padding: 5px 23px;
+            border: none;
+            border-radius: 50px;
+            background-color: #8a88ff;
+            color: white;
+            margin-top: 4px;
+            font-size: 18px;
+            opacity: 1;
+        }
+
+        .contact_b:hover {
+            transform: scale(1.1);
+            opacity: .8;
+            letter-spacing: 2px;
+            padding: 4.2px 14px;
+        }
+
+        .toggle {
+            display: none;
+        }
+        #main {
+            color: white;
+        }
+        #tiping-box {
+            height: 100px;
+            /* border: 1px solid white; */
+        }
+        #tiping {
+            /* height: 50%; */
+            line-height: 42px;
+            text-align: center;
+            font-size: 40px;
+            /* -webkit-box-reflect: below -115px linear-gradient(transparent, #161616); */
+            -webkit-box-reflect: below -2px linear-gradient(transparent 55%, yellow);
+        }
+
+        @media (max-width:740px) {
+            header {
+                padding: 15px 10px;
+            }
+            .logo {
+                margin: 5px 10px;
+            }
+            .navbar {
+                display: none;
+            }
+            .colgate {
+                margin-top: 60px;
+            }
+            .colgate li{
+                list-style: none;
+                display: block;
+                margin-left: -90px;
+                letter-spacing: 3px;
+                font-size: 1.2em;
+                /* z-index: 2; */
+            }
+            .contact_b {
+                display: none;
+            }
+            .toggle {
+                position: absolute;
+                right: 10px;
+                float: right;
+                width: 50px;
+                display: flex;
+                flex-direction: column;
+                padding: 2px;
+            }
+            .toggle-bar {
+                margin-top: 10px;
+                background-color: white;
+                width: 45px;
+                height: 3px;
+                border: 2px solid white;
+                border-radius: 50px;
+            }
+            #main {
+                position: fixed;
+                top: 160px;
+            }
+            #tiping {
+                text-align: center;
+                margin-left: 50px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="logo">solaris</span>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">projects</a></li>
+                <li><a href="#">about</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="toggle" id="toggle">
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+        </a>
+        <a href="#"><button class="contact_b">Contact</button></a>
+    </header>
+
+    <main id="main">
+        <div id="tiping-box">
+            <div class="tiping" id="tiping">
+                <!-- hello -->
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+
+</html>
