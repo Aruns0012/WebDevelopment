@@ -20,32 +20,36 @@ setInterval(() => {
     }
 }, 500)
 
-// this block of code is responsible for typing the text in the page
-let ch = 'Where Is This World Going ?'
-let typeSc = document.getElementById('tiping-box');
-let i = 0;
-typScreen = document.getElementById('tiping');
-
-
-check();
-function check() {
-    typScreen.innerHTML = "";
-    let hes = setInterval(printer, 170);
-    
-    
-    function printer() {    
-        // ye ek baar me ek letter print karta hai           
-            if (i >= ch.length) {
-                typScreen.innerHTML = '';
-                i = 0;
-                clearInterval(hes);
-                check();
-            } else if (i < ch.length) {
-                typScreen.innerHTML += ch[i];
-                i++;
-            }
-        }
+// this block will print in loop 
+console.log("hello peter");
+let arr = ["welcome to this website", "buy me a cyber truck"]
+let wordnum = 0;
+let lettercount = 0;
+let writer = document.getElementById('tiping');
+let cursor = document.getElementById('cursor');
+print();
+function print() {
+    if(lettercount < arr[wordnum].length) {
+        writer.textContent += arr[wordnum].charAt(lettercount);
+        lettercount++;
+        setTimeout(print,200);
+    }
+    else setTimeout(erase, 2000);
 }
+
+function erase() {
+    if(lettercount > 0) {
+        writer.textContent = arr[wordnum].substring(0, lettercount-1)
+        lettercount--;
+        setTimeout(erase, 80);
+    }
+    else {
+        wordnum++;
+        if(wordnum >= arr.length) wordnum = 0 ;
+        setTimeout(print, 1234);
+    }
+}
+
 
 let che = document.getElementById('body');
 let progress = document.getElementById('progress');
