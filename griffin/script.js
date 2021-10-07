@@ -1,6 +1,6 @@
 console.log("hello peter");
 
-// -----------------------------------------this part is for the toggle button-------------------------------------
+// ------------------------------------this part is for the toggle button-------------------------------------
 let a = document.getElementById('menulist');
 let b = document.getElementById('toggle');
 a.style.maxHeight = "0px";
@@ -8,7 +8,7 @@ a.style.maxHeight = "0px";
 function toggle() {
     if (a.style.maxHeight == "0px") {
         a.style.maxHeight = "500px";
-        b.innerHTML= "&#9747;";
+        b.innerHTML = "&#9747;";
     } else {
         a.style.maxHeight = "0px";
         b.innerHTML = "&#9776;";
@@ -19,7 +19,7 @@ function toggle() {
 
 
 
-//-------------------------------------------------this part is for the progress indicator----------------------------
+//------------------------------------------this part is for the progress indicator----------------------------
 let che = document.getElementById('container');
 let progress = document.getElementById('progress');
 var containerHeight;
@@ -36,7 +36,7 @@ window.onscroll = () => {
 
 
 
-//-----------------------------------------------this is for typing effect on the website---------------------------------
+//----------------------------------this is for typing effect on the website---------------------------------
 let arr = ["welcome to this website", "buy me a cyber truck"]
 let wordnum = 0;
 let lettercount = 0;
@@ -57,10 +57,17 @@ function erase() {
         writer.textContent = arr[wordnum].substring(0, lettercount - 1)
         lettercount--;
         setTimeout(erase, 80);
-    }
-    else {
+    } else {
         wordnum++;
         if (wordnum >= arr.length) wordnum = 0;
         setTimeout(print, 1234);
     }
 }
+
+
+
+// let mouse = document.getElementById('mouse');
+// let m1 = getComputedStyle(mouse);S
+// console.log(m1);
+// console.log(JSON.parse(m1));
+
