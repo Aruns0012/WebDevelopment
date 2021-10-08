@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon-32x32.png" type="image/x-icon">
+    <title>login-griffin</title>
+    <style>
+        * {
+            text-transform: capitalize;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all .2s;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #242424;
+        }
+
+        .card {
+            background-color: rgb(0, 0, 0);
+            /* border: 1px solid black; */
+            height: 400px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            /* box-shadow: 2px 4px 10px white; */
+        }
+
+        .shade {
+            background: linear-gradient(90deg, rgb(99, 255, 94), rgb(128, 99, 255));
+            position: relative;
+            width: 40%;
+            height: 150%;
+            animation: jaadu 4s linear infinite;
+        }
+
+        @keyframes jaadu {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .continue {
+            position: absolute;
+            width: 97%;
+            height: 97%;
+            z-index: 5;
+            color: white;
+            background-color: rgb(41, 41, 41);
+            padding: 10px;
+            display: flex;
+            border-radius: 15px;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 25px;
+        }
+
+        .inputs {
+            /* position: absolute; */
+            margin: 15px 0px;
+            color: white;
+            height: 20%;
+            /* height: 0; */
+            border-bottom: 1px solid white;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid white;
+            /* background-color: rgb(190, 130, 130); */
+            background: transparent;
+        }
+
+        .inputs:active {
+            background-color: transparent
+        }
+
+        #submit {
+            /* width: 100%; */
+            /* margin-left:20px; */
+            border: 1px solid white;
+            height: 50px;
+            margin-top: 30px;
+            color: white;
+            border-radius: 15px;
+            font-size: 20px;
+            background-color: rgb(129, 129, 129);
+        }
+
+        #submit:active {
+            background-color: yellow;
+            color: black;
+            color: #ff0000;
+            font-size: large;
+        }
+        p {
+            text-align: center;
+            padding: 10px;
+        }
+        #chalwapis {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" id="card">
+            <div class="shade" id="shade"></div>
+            <!-- <div class="continue"> -->
+            <form action="#" class="continue">
+
+                <label for="email">email</label>
+                <input type="email" placeholder="Enter your email" id="email" class="inputs" required>
+                <label for="password">pasword</label>
+                <input type="password" placeholder="Enter your password" id="password" class="inputs" minlength="9"
+                    required>
+                <button id="submit" class="inputs">Submit</button>
+            </form>
+            <!-- </div> -->
+        </div>
+
+        <p ><a href="../index.html" id="chalwapis">back to home</a></p>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
