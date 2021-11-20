@@ -1,0 +1,41 @@
+.cocn{
+    height: 300px;
+    width: 100%;
+    z-index: 3;
+    padding: 12px;
+}
+.projects{
+    width: 100%;
+    height: 100%;
+  display: flex;
+}
+.icon{
+    min-width: 450px;
+    height: 100%;
+    background: no-repeat center fixed;
+    margin:0 10px;
+    z-index: 5;
+    border-radius: 15px;
+}
+.desc{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: wheat;
+    display: flex;
+    align-items: center;
+    transform: translateX(-60%);
+    opacity: 0;
+    z-index: -2;
+}
+.descp{
+    font-size: 30px;
+    text-align: center;
+}
+.icon:hover ~ .desc {
+    transform: translateX(0%);
+    padding: 0 10px;
+    opacity: 1;
+    z-index: 1  ;
+
+}

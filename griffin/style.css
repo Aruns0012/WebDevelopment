@@ -8,6 +8,7 @@
             font-family: 'Patrick Hand', cursive;
             transition: all .3s;
             text-transform: capitalize;
+            /* font-size: 10px; */
         }
         ::-webkit-scrollbar {
             width: 4px;
@@ -24,8 +25,25 @@
         ::-webkit-scrollbar-button {
             display: none;
         }
-
+        body {
+            /* overflow: hidden; */
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+        }
+        @keyframes huga {
+            0% {
+                height: 0vh;
+                width: 0vw;
+            }
+            100% {
+                height: 100vh;
+                width: 100%;
+                
+            }
+        }
         .container {
+            animation: huga .5s 1;
             box-sizing: border-box;
             width: 100%;
             min-height: 110vh;
@@ -159,6 +177,10 @@
             -webkit-box-reflect: below -2px linear-gradient(transparent 55%, yellow);
         }
 
+        #main {
+            height: 100vh;
+        }
+
         #content {
             color: wheat;
             display: flex;
@@ -208,6 +230,48 @@
             text-align: center;
             display: none;
         } */
+
+        footer {
+            background-color: rgb(133, 133, 133);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        footer ul {
+            width: 100%;
+            text-align: center;
+        }
+        footer ul li {
+            display: inline-block;
+            margin: 20px 10px 0 10px;
+        }
+        footer ul li a {
+            color: rgb(255, 255, 255);
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            color: green;
+        }
+        .logoo:hover {
+            transform: translateY(-10px);
+            /* color: white; */
+        }
+
+        .tabs li a {
+            font-size: 1.2rem;
+        }
+
+        .tabs li a:hover {
+            opacity: .9;
+            color: black;
+        }
+
+        
+        
     
         @media  screen and (max-width:699px) {
             nav {
@@ -218,6 +282,10 @@
                 display: inline-block;
                 margin-right: 15px;
                 font-size: 25px;
+            }
+
+            #toggle:hover {
+                cursor: pointer;
             }
 
             nav ul {
@@ -247,6 +315,9 @@
                 width: 90%;
                 margin: 10px auto;
                 right: 25px;
+            }
+            #log:hover {
+                color: black;
             }
             /* .active::before {
                 display: none;
