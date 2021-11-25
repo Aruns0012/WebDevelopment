@@ -17,6 +17,33 @@ function toggle() {
 }
 
 
+//  this block is to toggle theme of the page
+let lights = document.querySelector(".lights");
+lights.addEventListener('click', ()=>{
+    let state = document.querySelector('.state');
+    let txtclr = document.querySelector(':root');
+
+    if(state.innerHTML == 'off'){ 
+        // to enable dark mode
+
+        state.innerHTML = 'on';
+        txtclr.style.setProperty('--navColor', '#161616');
+        txtclr.style.setProperty('--containerColor','#242424');
+        txtclr.style.setProperty('--textclr', '#f5deb3');
+        txtclr.style.setProperty('--mobnavcol', '#000000');
+        
+    }else if(state.innerHTML == 'on'){ 
+        // to enable light mode
+
+        state.innerHTML='off'
+        txtclr.style.setProperty('--navColor', '#928aff');
+        txtclr.style.setProperty('--containerColor','#ffffff');
+        txtclr.style.setProperty('--textclr', '#000000');
+        txtclr.style.setProperty('--mobnavcol', '#928aff');
+    }
+})
+
+
 
 
 //------------------------------------------this part is for the progress indicator----------------------------

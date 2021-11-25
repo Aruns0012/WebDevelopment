@@ -10,6 +10,15 @@
             text-transform: capitalize;
             /* font-size: 10px; */
         }
+
+        :root{
+            --textclr: #f5deb3;
+            --mobnavcol : #161616;
+            --containerColor: #242424;
+            --navColor: #161616;
+            /* --navColor: #242424; */
+        }
+
         ::-webkit-scrollbar {
             width: 4px;
            
@@ -48,7 +57,7 @@
             width: 100%;
             min-height: 110vh;
             /* height: 90vh; */
-            background-color: #242424;
+            background-color: var(--containerColor);
             /* background-image: url("firstpage.jpg"); */
             /* background-size: cover ; */
             /* background-position: fixed; */
@@ -61,6 +70,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            /* filter: invert(100%); */
             z-index: 2;
         }
 
@@ -75,9 +85,10 @@
 
         .navbar {
             display: flex;
-            background-color: #161616;
+            background-color: var(--navColor);
+            /* background-color: #928aff; */
             height: 90px;
-            color: wheat;
+            color: var(--textclr);
             align-items: center;
         }
 
@@ -118,8 +129,13 @@
         nav ul li a {
             text-decoration: none;
             font-size: 20px;
-            color: white;
+            color: var(--textclr);
             
+        }
+        .lights{
+            position: absolute;
+            right: 200px;
+            /* text-align: right; */
         }
         nav ul li a:hover {
             letter-spacing: 2px;
@@ -140,7 +156,8 @@
             color: black;
         }
         #log a {
-            color: #99f575;
+            /* color: #99f575; */
+            color: var(--textclr);
 
         }
         #log a:hover {
@@ -173,7 +190,7 @@
             line-height: 42px;
             text-align: center;
             font-size: 40px;
-            color: wheat;
+            color: var(--textclr);
             -webkit-box-reflect: below -2px linear-gradient(transparent 55%, yellow);
         }
 
@@ -182,7 +199,7 @@
         }
 
         #content {
-            color: wheat;
+            color: var(--textclr);
             display: flex;
         }
 
@@ -298,7 +315,7 @@
                 z-index: 2;
                 width: 100%;
                 overflow: hidden;
-                background-color: #161616;
+                background-color: var(--mobnavcol);
                 transition: all .2s ease-in;
                 scroll-behavior: smooth;
                 border-radius: 0 0 10px 10px;
@@ -311,9 +328,15 @@
                 text-align: center;
             }
 
+            .lights{
+                display: block;
+                margin: 10px -70px;
+
+            }
+
             #log {
                 width: 90%;
-                margin: 10px auto;
+                margin: 60px auto;
                 right: 25px;
             }
             #log:hover {
