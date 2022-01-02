@@ -4,32 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        .clear span{
+            background-color: #6dca02;
+        }
+
+    </style>
 </head>
 
-<body bgcolor="#121211">
-    <h1>hello peter</h1>
-    <input class='inpuText' type="text" name="" id="">
-    <button class="checker">convert</button>
-    <input type="text" name="" class="inpBinary">
-    <button class="find">find</button>
-    <button class="encrypt">encrypt</button>
-    perform string operation on binary to encript
+<body>
+    <h1 class="title">
+        i know your password
+    </h1>
+    <div class="out">
+        <!-- <div class="outbox"></div> -->
+        <textarea name="" id="" cols="30" rows="10" class="outbox" readonly></textarea>
+    </div>
+    <div class="funbox">
+        <div class="encryptionbox box">
+            <h3>Encrypt</h3>
+            <div class="inputC">
+                <input class='inpuText txtInp' type="text">
+            </div>
+            <div class="buttons">
+                <button class="checker a" id="a">convert</button>
+                <button class="encrypt a">encrypt</button>
+                <button class="find a">find</button>
+            </div>
+        </div>
+
+        <div class="clear a" >Clear</div>
+
+        <div class="decryptionbox box">
+            <h3>Decrypt</h3>
+            <div class="inputC">
+                <input type="text" class="encrypText txtInp">
+            </div>
+            <div class="buttons">
+                <button class="checkerB a ">convert</button>
+                <button class="decrypt a ">decrypter</button>
+                <button class="findB a">find</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <script>
+         const button = document.querySelectorAll('.a')
+        // button.addEventListener('click', (e) => {
+        //     let x = e.clientX - e.target.offsetLeft;
+        //     let y = e.clientY - e.target.offsetTop;
+        //     let ripple = document.createElement('span')
+        //     ripple.style.left = x + "px"
+        //     ripple.style.top = y + "px"
+        //     button.appendChild(ripple)
+        //     setTimeout(() => {
+        //         ripple.remove()
+        //     }, 1000)
+        // })
+        for (let k = 0; k < button.length; k++) {
+            button[k].addEventListener('click',(e)=>{
+                let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+            let ripple = document.createElement('span')
+            ripple.style.left = x + "px"
+            ripple.style.top = y + "px"
+            button[k].appendChild(ripple)
+            setTimeout(() => {
+                ripple.remove()
+            }, 1000)
+            })
+            
+        }
+</script>
+<script>
+
+    let clearity = document.querySelector('.clear');
+    clearity.addEventListener('click', ()=>{
+        output.innerHTML = "";
+    })
 
     let inpuText = document.querySelector('.inpuText');
-    let vals = document.querySelector('.inpBinary');
+    // let vals = document.querySelector('.inpBinary');
     let encrypt = document.querySelector('.encrypt');
     let check = document.querySelector('.checker');
     let find = document.querySelector('.find');
+    let output = document.querySelector('.outbox');
 
     let valsArr;
     let proceded = false;
 
     function liveConverter(event) {
+
+
         let input_text = event.target.value;
         let txtArr = [];
 
@@ -40,6 +112,7 @@
         }
 
         vals = txtArr.join(" ");
+        // console.log(vals);
     }
 
     function checker() {
@@ -50,46 +123,48 @@
         setTimeout(() => {
             console.log('converted successfully');
         }, 500);
-        // console.log(valsArr);
     }
 
 
     function finder() {
         if (proceded == true) {
-            // console.log('we are here');
             vals = valsArr.toString(" ");
             vals = vals.replace(/,/g, ' ');
             let message = vals.split(' ').map(b => parseInt(b, 2)).map(num => String.fromCharCode(num)).join('');
             console.log(message);
-            // console.log(vals);
-        }else{
+            output.innerHTML = message;
+        } else {
             console.log('please encrypt it first');
         }
     }
 
     function encrypter() {
-        proceded = true
+        proceded = true;
         let operationArr = [];
         for (let i = 0; i < valsArr.length; i++) {
             let a = valsArr[i];
-            // console.log(typeof (a));
             let b = Array.from(a);
-            let j = 6;
+            let j = 1;
+            let k = 4;
+
+            // 01101101
             b[j] == '1' ? b[j] = '0' : b[j] = '1';
+            // console.log(b[j]);
+            b[k] == '1' ? b[k] = '0' : b[k] = '1';
+            // console.log(b[k]);
             a = b.toString();
-            a = a.replace(/,/g, '')
+            a = a.replace(/,/g, '');
             valsArr[i] = a;
         }
-        // console.log(valsArr);
         setTimeout(() => {
             console.log('password Encrypted');
         }, 500);
     }
 
-    inpuText.addEventListener('input',liveConverter);
+    inpuText.addEventListener('input', liveConverter);
     check.addEventListener('click', checker);
-    find.addEventListener('click',  finder);
-    encrypt.addEventListener('click',  encrypter);
+    find.addEventListener('click', finder);
+    encrypt.addEventListener('click', encrypter);
 
     // inpuText.addEventListener('input', (event) => {
     //     let input_text = event.target.value;
@@ -144,5 +219,6 @@
     //     console.log(valsArr);
     // })
 </script>
+<script src="script.js"></script>
 
 </html>

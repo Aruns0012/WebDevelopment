@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.1s all ease-in;
+
+    font-family: 'Patrick Hand', cursive;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #041C32;
+    color: white;
+}
+.title{
+    text-align: center;
+    text-transform: capitalize;
+}
+.out{
+    width: 100%;
+    height: 270px;
+    padding: 12px;
+}
+.outbox{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 4px solid #4C3F91;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #8ff;
+    color: black;
+    resize:none;
+    overflow-x: hidden;
+    /* line-height: 250px; */
+}
+.funbox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.box{
+    width: 400px;
+    height: 400px;
+    padding: 4px;
+    background: #064663;
+    border-radius: 7px;
+}
+.box .inputC {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.box .buttons {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.box h3{
+    text-align: center;
+    font-size: 28px;
+}
+.box input{
+    width: 80%;
+    height: 35px;
+    /* border: 1px solid black; */
+    margin: 4px auto;
+    padding: 5px;
+    text-align: center;
+    outline: none;
+    border-radius: 6px;
+    font-size: 25px;
+}
+
+.clear{
+    height: 100px;
+    width: 150px;
+    background-color: yellow;
+    color: black;
+    line-height: 100px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 30px;
+}
+
+.clear:active{
+    /* transform: scale(1.1);  */
+    font-size: 35px;
+}
+.box button{
+    height: 50px;
+    width: 170px;
+    margin: 12px;
+    border-radius: 7px;
+    background: grey;
+    color:white;
+    font-size: 25px;
+    text-transform: uppercase;
+    border: none;
+}
+.box .buttons button:active{
+    /* background: #8ff; */
+    /* transform: scale(1.1); */
+    border-radius: 10px 3px 10px 3px;
+    color: black;
+    font-size: 32px;
+}
+/* ripple effect                                        */
+.a{
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #fff;
+    position: absolute;
+    border-radius: 490px;
+    transform: translate(-50%, -50%);
+    animation: anim 1s linear infinite;
+    pointer-events: none;
+}
+@keyframes anim {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0.7;
+    }
+
+    100% {
+        height: 1000px;
+        width: 1000px;
+        opacity: 0;
+    }
+}
