@@ -60,8 +60,8 @@ function decrypter() {
         for (let i = 0; i < txtval.length; i++) {
             let a = txtval[i];
             let b = Array.from(a);
-            let j = 1;
-            let k = 4;
+            let j = 2;
+            let k = 5;
             b[j] == '0' ? b[j] = '1' : b[j] = '0';
             b[k] == '0' ? b[k] = '1' : b[k] = '0';
             a = b.toString();

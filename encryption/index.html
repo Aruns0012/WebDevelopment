@@ -26,7 +26,7 @@
     </div>
     <div class="funbox">
         <div class="encryptionbox box">
-            <h3>Encrypt</h3>
+            <h3>Encrypt / Decrypt </h3>
             <div class="inputC">
                 <input class='inpuText txtInp' type="text">
             </div>
@@ -34,12 +34,12 @@
                 <button class="checker a" id="a">convert</button>
                 <button class="encrypt a">encrypt</button>
                 <button class="find a">find</button>
+                <div class="clear a" >Clear</div>
             </div>
         </div>
 
-        <div class="clear a" >Clear</div>
 
-        <div class="decryptionbox box">
+        <!-- <div class="decryptionbox box">
             <h3>Decrypt</h3>
             <div class="inputC">
                 <input type="text" class="encrypText txtInp">
@@ -49,7 +49,7 @@
                 <button class="decrypt a ">decrypter</button>
                 <button class="findB a">find</button>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </body>
@@ -166,59 +166,7 @@
     find.addEventListener('click', finder);
     encrypt.addEventListener('click', encrypter);
 
-    // inpuText.addEventListener('input', (event) => {
-    //     let input_text = event.target.value;
-    //     let txtArr = [];
-
-    //     for (let i = 0; i < input_text.length; i++) {
-    //         let binVal = '0000';
-    //         binVal = ('0000' + input_text.charCodeAt(i).toString(2)).slice(-8);
-    //         txtArr.push(binVal);
-    //     }
-
-    //     vals = txtArr.join(" ");
-    // })
-    // // ---------------------------------------------------------------------
-    // let check = document.querySelector('.checker');
-    // check.addEventListener('click', () => {
-    //     valsArr = vals.split(/(\s+)/);
-    //     valsArr = valsArr.filter((e) => {
-    //         return e != " ";
-    //     })
-    //     console.log(valsArr);
-    // })
-
-    // // -------------------------------------------------------------------------
-    // let find = document.querySelector('.find');
-    // find.addEventListener('click', () => {
-    //     if (proceded == true) {
-    //         console.log('we are here');
-    //         vals = valsArr.toString(" ");
-    //         vals = vals.replace(/,/g, ' ');
-    //         let message = vals.split(' ').map(b => parseInt(b, 2)).map(num => String.fromCharCode(num)).join('');
-    //         console.log(message);
-    //         console.log(vals);
-    //     }
-    // })
-
-    // // ------------------------------------------------------------------------
-
-    // encrypt.addEventListener('click', () => {
-    //     proceded = true
-    //     let operationArr = [];
-    //     for (let i = 0; i < valsArr.length; i++) {
-    //         let a = valsArr[i];
-    //         console.log(typeof (a));
-    //         let b = Array.from(a);
-    //         let j = 6;
-    //         b[j] == '1' ? b[j] = '0' : b[j] = '1';
-    //         a = b.toString();
-    //         a = a.replace(/,/g, '')
-    //         valsArr[i] = a;
-    //     }
-    //     console.log(valsArr);
-    // })
 </script>
-<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
 
 </html>
