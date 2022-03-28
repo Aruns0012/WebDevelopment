@@ -1,0 +1,20 @@
+.messageBox{
+    /* background-color: red; */
+    padding: 1.3vmax;
+    margin: 1.3vmax;
+    /* width: 40%; */
+    clear: both;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+}
+
+.right{
+    float: right;
+    background-color: #24ad24;
+}
+
+.left {
+    float: left;
+    background-color: #8f8d1c;
+}

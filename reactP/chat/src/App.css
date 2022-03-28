@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+height: 100vh;
+}
+
+@media (max-aspect-ratio : 7/10) {
+    .JoinContainer{
+        width: 100% !important ;
+        font-size: 3vmax;
+    }
+    .JoinContainer > img {
+        width: 15vmax;
+    }
+
+    #JoinInput{
+        font-size: 25px !important;
+        width: 90% !important;
+        height: 4vmax !important;
+    }
+
+    .Joinbtn{
+        width: 85vw !important;
+        height: 30px !important;
+        font-size: 25px !important;
+
+    }
+
+    .chatContainer{
+        width: 100vh !important;
+        height: 100vh !important;
+    }
+
+    .header{
+        height: 10% !important;
+    }
+
+    .chatBox{
+        height: 80% !important;
+    }
+
+    .inputBox{
+        height: 10% !important;
+    }
+    
+    #chatInput{
+        font-size: 30px !important;
+    }
+
+    .messageBox{
+        /* width: 70% !important; */
+        font-size: 20px !important;
+    }
+}
