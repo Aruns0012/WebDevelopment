@@ -3,7 +3,7 @@ body{
 height: 100vh;
 }
 
-@media (max-aspect-ratio : 7/10) {
+@media  screen and (max-width:699px) {
     .JoinContainer{
         width: 100% !important ;
         font-size: 3vmax;
