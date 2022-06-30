@@ -4,6 +4,18 @@ height: 100vh;
 }
 
 @media  screen and (max-width:699px) {
+
+    
+    .LoginContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .MobNum {
+        /* font-size: 25px; */
+        width: 45vmax;
+    }
+
     .JoinContainer{
         width: 100% !important ;
         font-size: 3vmax;
@@ -24,6 +36,8 @@ height: 100vh;
         font-size: 25px !important;
 
     }
+
+    
 
     .chatContainer{
         width: 100vh !important;

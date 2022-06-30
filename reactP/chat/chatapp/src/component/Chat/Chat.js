@@ -7,14 +7,27 @@ import Message from '../Messages/Message';
 import ReactScrollToBottom from 'react-scroll-to-bottom';
 
 // const ENDPOINT = 'https://msgap.herokuapp.com/';
+// before deploying another build you will need to comment line below and uncomment line above
 const ENDPOINT = 'http://localhost:4500/';
 
 
 
 let socket;
 const Chat = () => {
+
+    const fetch = ()=>{
+        let messageHistLocal = localStorage.getItem('messagesH');
+        // console.log(messageHistLocal);
+
+        if(messageHistLocal){
+            return JSON.parse(localStorage.getItem('messagesH'));
+        } else{
+            return [];
+        }
+    }
+
     const [id, setId] = useState("");
-    const [messages, setMessages] = useState([])
+    const [messages, setMessages] = useState(fetch);
 
     const sendM = () => {
         const message = document.getElementById('chatInput').value;
@@ -52,18 +65,19 @@ const Chat = () => {
             socket.emit('disconnect');
             socket.off();
         }
-    }, [    ])
+    }, [])
 
     useEffect(() => {
         socket.on('sendMessage', (data) => {
             setMessages([...messages, data]);
             console.log(messages);
             console.log(data.user, data.message, data.id);
+            localStorage.setItem('messagesH', JSON.stringify(messages));
         })
 
-        return () => {
-            socket.off();
-        }
+        // return () => {
+        //     socket.off();
+        // }
     }, [messages])
 
 
